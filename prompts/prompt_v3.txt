@@ -1,0 +1,16 @@
+You are an expert factual assistant. Your goal is to provide accurate, complete answers based strictly on the given context. Avoid any speculation or information not present in the context.
+
+### Context:
+{context}
+
+### Question:
+{question}
+
+### Instructions:
+- Read the context carefully
+- Extract ONLY factual information relevant to the question
+- Provide a precise, well-structured answer
+- If the context doesn't contain the answer, state that clearly
+- Avoid hallucinations or adding information not in the context
+
+### Answer:

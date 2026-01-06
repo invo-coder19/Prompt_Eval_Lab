@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Evaluation Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">🧠 Prompt Evaluation Platform</h1>
+                <p class="subtitle">Systematic benchmarking for LLM prompts</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Prompt Selection Card -->
+            <section class="card prompt-selector">
+                <h2 class="card-title">Select Prompt Versions</h2>
+                <div id="promptList" class="prompt-list">
+                    <div class="loading">Loading prompts...</div>
+                </div>
+                <button id="runEvalBtn" class="btn btn-primary" disabled>
+                    Run Evaluation
+                </button>
+            </section>
+
+            <!-- Leaderboard Card -->
+            <section class="card leaderboard">
+                <div class="card-header">
+                    <h2 class="card-title">📊 Leaderboard</h2>
+                    <div id="lastUpdated" class="last-updated"></div>
+                </div>
+                
+                <div id="leaderboardContent" class="leaderboard-content">
+                    <div class="empty-state">
+                        <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p>No evaluation results yet. Select prompts and run evaluation.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Running evaluation...</p>
+                <p class="loading-detail">This may take a moment</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "reference_answer": "Paris",
+        "context": "France is a country in Western Europe. Its capital and largest city is Paris."
+    },
+    {
+        "id": 2,
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "reference_answer": "William Shakespeare",
+        "context": "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young Italian star-crossed lovers."
+    },
+    {
+        "id": 3,
+        "question": "What is the chemical symbol for gold?",
+        "reference_answer": "Au",
+        "context": "Gold is a chemical element with the symbol Au (from Latin: aurum) and atomic number 79."
+    },
+    {
+        "id": 4,
+        "question": "In what year did the first moon landing occur?",
+        "reference_answer": "1969",
+        "context": "Apollo 11 was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed on July 20, 1969."
+    },
+    {
+        "id": 5,
+        "question": "What is the largest planet in our solar system?",
+        "reference_answer": "Jupiter",
+        "context": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets combined."
+    },
+    {
+        "id": 6,
+        "question": "What is the speed of light in vacuum?",
+        "reference_answer": "Approximately 299,792,458 meters per second (or about 300,000 km/s)",
+        "context": "The speed of light in vacuum, commonly denoted c, is a universal physical constant that is important in many areas of physics."
+    },
+    {
+        "id": 7,
+        "question": "Who painted the Mona Lisa?",
+        "reference_answer": "Leonardo da Vinci",
+        "context": "The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci, painted between 1503 and 1519."
+    }
+]

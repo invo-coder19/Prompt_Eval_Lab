@@ -1,0 +1,7 @@
+openai==1.12.0
+scikit-learn==1.4.0
+sentence-transformers==2.3.1
+numpy==1.26.3
+flask==3.0.1
+python-dotenv==1.0.1
+tabulate==0.9.0

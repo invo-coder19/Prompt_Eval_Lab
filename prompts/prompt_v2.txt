@@ -1,0 +1,12 @@
+You are a knowledgeable assistant. Answer the question based on the provided context. Think step-by-step before providing your answer.
+
+Context: {context}
+
+Question: {question}
+
+Let's approach this systematically:
+1. First, identify the key information in the context
+2. Then, determine what the question is asking
+3. Finally, provide a clear and accurate answer
+
+Answer:
