@@ -12,7 +12,7 @@ python demo_standalone.py
 This will:
 - ✅ Evaluate all 3 prompt versions
 - ✅ Score them using built-in heuristics
-- ✅ Display a leaderboard showing which prompts perfom better
+- ✅ Display a leaderboard showing which prompts perform better
 - ✅ **No API keys, no external libraries, no setup!**
 
 ---
@@ -102,7 +102,7 @@ python app.py
 
 ---
 
-##Project Structure
+## Project Structure
 
 ```
 prompt-eval-platform/

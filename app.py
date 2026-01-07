@@ -3,8 +3,12 @@ Flask web application for the Prompt Evaluation Dashboard.
 """
 
 from flask import Flask, render_template, jsonify, request
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+from flask_cors import CORS
 from pathlib import Path
 import sys
+import os
 
 # Add src to Python path
 sys.path.insert(0, str(Path(__file__).parent / 'src'))
@@ -12,7 +16,31 @@ sys.path.insert(0, str(Path(__file__).parent / 'src'))
 from runner import EvaluationRunner
 from leaderboard import Leaderboard
 
+# Run environment validation on startup
+try:
+    from validate_env import validate_environment
+    validate_environment()
+except ImportError:
+    print("⚠️  Environment validator not found. Skipping validation.")
+
 app = Flask(__name__)
+
+# Configure CORS (adjust origins for production)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": os.getenv("CORS_ORIGINS", "*").split(","),
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
+
+# Configure rate limiting
+limiter = Limiter(
+    app=app,
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour"],
+    storage_uri="memory://"
+)
 
 
 @app.route('/')
@@ -68,4 +96,7 @@ def get_leaderboard():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Use environment variable for debug mode (never hardcode in production)
+    debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() in ('true', '1', 'yes')
+    port = int(os.getenv('FLASK_PORT', '5000'))
+    app.run(debug=debug_mode, port=port)

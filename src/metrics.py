@@ -13,9 +13,17 @@ class MetricsCalculator:
     """Calculates various metrics for comparing LLM outputs with references."""
     
     def __init__(self):
-        """Initialize the sentence transformer model for embeddings."""
-        # Using a lightweight model for fast semantic similarity
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        """Initialize the metrics calculator with lazy model loading."""
+        self._model = None  # Lazy load to improve startup time
+    
+    @property
+    def model(self):
+        """Lazy-load the sentence transformer model on first use."""
+        if self._model is None:
+            # Using a lightweight model for fast semantic similarity
+            self._model = SentenceTransformer('all-MiniLM-L6-v2')
+        return self._model
+
     
     def semantic_similarity(self, text1: str, text2: str) -> float:
         """

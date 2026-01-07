@@ -3,42 +3,105 @@
         "id": 1,
         "question": "What is the capital of France?",
         "reference_answer": "Paris",
-        "context": "France is a country in Western Europe. Its capital and largest city is Paris."
+        "context": "France is a country in Western Europe. Its capital and largest city is Paris.",
+        "category": "geography"
     },
     {
         "id": 2,
         "question": "Who wrote 'Romeo and Juliet'?",
         "reference_answer": "William Shakespeare",
-        "context": "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young Italian star-crossed lovers."
+        "context": "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young Italian star-crossed lovers.",
+        "category": "literature"
     },
     {
         "id": 3,
         "question": "What is the chemical symbol for gold?",
         "reference_answer": "Au",
-        "context": "Gold is a chemical element with the symbol Au (from Latin: aurum) and atomic number 79."
+        "context": "Gold is a chemical element with the symbol Au (from Latin: aurum) and atomic number 79.",
+        "category": "science"
     },
     {
         "id": 4,
         "question": "In what year did the first moon landing occur?",
         "reference_answer": "1969",
-        "context": "Apollo 11 was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed on July 20, 1969."
+        "context": "Apollo 11 was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin landed on July 20, 1969.",
+        "category": "history"
     },
     {
         "id": 5,
         "question": "What is the largest planet in our solar system?",
         "reference_answer": "Jupiter",
-        "context": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets combined."
+        "context": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets combined.",
+        "category": "science"
     },
     {
         "id": 6,
         "question": "What is the speed of light in vacuum?",
         "reference_answer": "Approximately 299,792,458 meters per second (or about 300,000 km/s)",
-        "context": "The speed of light in vacuum, commonly denoted c, is a universal physical constant that is important in many areas of physics."
+        "context": "The speed of light in vacuum, commonly denoted c, is a universal physical constant that is important in many areas of physics.",
+        "category": "science"
     },
     {
         "id": 7,
         "question": "Who painted the Mona Lisa?",
         "reference_answer": "Leonardo da Vinci",
-        "context": "The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci, painted between 1503 and 1519."
+        "context": "The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci, painted between 1503 and 1519.",
+        "category": "art"
+    },
+    {
+        "id": 8,
+        "question": "What is the largest ocean on Earth?",
+        "reference_answer": "The Pacific Ocean",
+        "context": "The Pacific Ocean is the largest and deepest of Earth's five oceanic divisions, covering more than 30% of the Earth's surface.",
+        "category": "geography"
+    },
+    {
+        "id": 9,
+        "question": "Who invented the telephone?",
+        "reference_answer": "Alexander Graham Bell",
+        "context": "Alexander Graham Bell was a Scottish-born inventor, scientist, and engineer who is credited with inventing and patenting the first practical telephone in 1876.",
+        "category": "history"
+    },
+    {
+        "id": 10,
+        "question": "What is the smallest prime number?",
+        "reference_answer": "2",
+        "context": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. The number 2 is the smallest and only even prime number.",
+        "category": "mathematics"
+    },
+    {
+        "id": 11,
+        "question": "What is photosynthesis?",
+        "reference_answer": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce oxygen and energy in the form of sugar.",
+        "context": "Photosynthesis is a vital biological process that occurs in plants, algae, and some bacteria. It converts light energy into chemical energy stored in glucose.",
+        "category": "science"
+    },
+    {
+        "id": 12,
+        "question": "Who was the first president of the United States?",
+        "reference_answer": "George Washington",
+        "context": "George Washington served as the first president of the United States from 1789 to 1797. He is often called the 'Father of His Country.'",
+        "category": "history"
+    },
+    {
+        "id": 13,
+        "question": "What is the freezing point of water in Celsius?",
+        "reference_answer": "0 degrees Celsius",
+        "context": "Water freezes at 0 degrees Celsius (32 degrees Fahrenheit) at standard atmospheric pressure.",
+        "category": "science"
+    },
+    {
+        "id": 14,
+        "question": "Who wrote '1984'?",
+        "reference_answer": "George Orwell",
+        "context": "1984 is a dystopian social science fiction novel and cautionary tale written by English writer George Orwell, published in 1949.",
+        "category": "literature"
+    },
+    {
+        "id": 15,
+        "question": "What is the currency of Japan?",
+        "reference_answer": "Japanese Yen",
+        "context": "The yen is the official currency of Japan. It is the third-most traded currency in the foreign exchange market after the United States dollar and the euro.",
+        "category": "economics"
     }
 ]

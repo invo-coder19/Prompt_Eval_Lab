@@ -77,7 +77,7 @@ def evaluate_output(output, reference):
     # Length comparison
     len_ratio = min(len(output), len(reference)) / max(len(output), len(reference), 1)
     
-    #Token overlap F1
+    # Token overlap F1
     out_words = set(output.lower().split())
     ref_words = set(reference.lower().split())
     

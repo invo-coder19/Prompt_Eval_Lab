@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: prompt-eval-platform
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_DEBUG=False
+      - FLASK_PORT=5000
+      # Add your API key here or use .env file
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - ./results:/app/results
+      - ./prompts:/app/prompts
+      - ./datasets:/app/datasets
+    restart: unless-stopped
+    networks:
+      - prompt-eval-network
+
+  # Optional: Redis for caching (uncomment to enable)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: prompt-eval-redis
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - prompt-eval-network
+  #   restart: unless-stopped
+
+networks:
+  prompt-eval-network:
+    driver: bridge

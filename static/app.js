@@ -12,6 +12,66 @@ class PromptEvaluator {
         this.loadLeaderboard();
     }
 
+    /**
+     * Show a toast notification
+     * @param {string} message - Message to display
+     * @param {string} type - Type: 'success', 'error', 'warning', 'info'
+     * @param {number} duration - How long to show (ms), 0 for permanent
+     */
+    showToast(message, type = 'info', duration = 5000) {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+
+        const icons = {
+            success: '✓',
+            error: '✕',
+            warning: '⚠',
+            info: 'ℹ'
+        };
+
+        const titles = {
+            success: 'Success',
+            error: 'Error',
+            warning: 'Warning',
+            info: 'Info'
+        };
+
+        toast.innerHTML = `
+            <span class="toast-icon">${icons[type] || icons.info}</span>
+            <div class="toast-content">
+                <div class="toast-title">${titles[type] || titles.info}</div>
+                <div class="toast-message">${message}</div>
+            </div>
+            <button class="toast-close" aria-label="Close">&times;</button>
+        `;
+
+        container.appendChild(toast);
+
+        // Close button functionality
+        const closeBtn = toast.querySelector('.toast-close');
+        closeBtn.addEventListener('click', () => {
+            this.removeToast(toast);
+        });
+
+        // Auto-remove after duration
+        if (duration > 0) {
+            setTimeout(() => {
+                this.removeToast(toast);
+            }, duration);
+        }
+
+        return toast;
+    }
+
+    removeToast(toast) {
+        toast.classList.add('hiding');
+        setTimeout(() => {
+            toast.remove();
+        }, 300); // Match animation duration
+    }
+
+
     setupEventListeners() {
         const runBtn = document.getElementById('runEvalBtn');
         runBtn.addEventListener('click', () => this.runEvaluation());
@@ -100,13 +160,14 @@ class PromptEvaluator {
             if (result.success) {
                 this.displayLeaderboard(result.leaderboard);
                 this.updateTimestamp();
+                this.showToast('Evaluation completed successfully!', 'success');
             } else {
-                alert('Evaluation failed: ' + (result.error || 'Unknown error'));
+                this.showToast(result.error || 'Evaluation failed', 'error');
             }
 
         } catch (error) {
             console.error('Error running evaluation:', error);
-            alert('Failed to run evaluation. Check console for details.');
+            this.showToast('Failed to run evaluation. Please try again.', 'error');
         } finally {
             overlay.classList.add('hidden');
         }
